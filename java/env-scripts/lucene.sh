@@ -1,4 +1,6 @@
 #!/bin/bash
+# lucene.sh - Creates the classpath for the demo version of lucene.
+#
 # Copyright 2014-2015 (C) Dwayne Randle
 #
 # This program is free software: you can redistribute it and/or modify it 
@@ -14,9 +16,6 @@
 # You should have received a copy of the GNU General Public License along with 
 # this program. If not, see <http://www.gnu.org/licenses/>
 # 
-
-# lucene.sh - Creates the classpath for the demo version of lucene.
-#
 
 # LUCENE_BASE_DIR is the path to the actual base directory where lucene
 # is installed.
