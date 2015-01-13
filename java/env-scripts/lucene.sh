@@ -21,5 +21,4 @@ function build_cp {
 for CP in $LUCENE_{CORE,QUERY_PARSER,ANALYZERS,DEMO} ; do
     build_cp $CP
 done
-
 echo final  $CLASSPATH
