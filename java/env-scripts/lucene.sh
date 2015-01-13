@@ -37,9 +37,5 @@ function build_cp {
 for CP in $LUCENE_{CORE,QUERY_PARSER,ANALYZERS,DEMO} ; do
     build_cp $CP
 done
-<<<<<<< HEAD
-=======
-
 # Display to the end user what we have created.
->>>>>>> testing
 echo final  $CLASSPATH
