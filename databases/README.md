@@ -8,3 +8,7 @@ I need a place to quickly retrieve my scripts from.
 ## Goal
 As of 12/1/2014, just to save them.  Nothing else.  Maybe later.
 
+## Postgresql
+* (list-user-permissions.sql) list user permissions
+
+## MySQL
