@@ -1,4 +1,6 @@
 #!/bin/bash
+# sync_postgres_replication.sh - Sync PostgreSQL Binary replication between two nodes
+# Copyright 2014-2015 (C) Dwayne Randle
 
 HOST=192.168.5.61
 PSQLDIR=/var/lib/pgsql/9.0
