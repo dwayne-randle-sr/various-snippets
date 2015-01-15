@@ -49,6 +49,8 @@ Adding repos that are not part of Centos and EPEL.
 ## Python
 ### Python startup scripts (pythonstartup.py)
 
+export PYTHONSTARTUP=~/pythonstartup.py
+
 ## Secure Shell
 ### Secure Shell Daemon
 Added a banner to display a warning prior to users logging in.
