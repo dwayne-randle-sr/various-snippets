@@ -1,0 +1,13 @@
+#!/bin/bash
+# Copyright 2015 (c) Dwayne Randle
+#
+# Determine if a server's kernel running is equal to the last one installed.
+#
+
+INSTALLED=$(rpm -q --last kernel | sort -r | head -n1 | cut -f1 -d' ' | sed 's/kernel-//')
+RUNNING=$(uname -r) 
+if [ "$INSTALLED" == "$RUNNING" ] ; then
+    echo "ok - no reboot required" 
+else
+    echo -e "reboot required \n\tinstalled:\t$INSTALLED \n\trunning:\t$RUNNING"
+fi
