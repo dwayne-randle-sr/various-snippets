@@ -23,3 +23,10 @@ except ImportError as importError:
 # from the file logsettings.py
 from logsettings import LOGSETTINGS
 ``` 
+
+Bare minimum logging
+```
+# the default log level is warning.
+import logging
+logging.warn('This should appear on the console(stderr).')
+```
