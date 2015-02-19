@@ -18,10 +18,17 @@ try:
     import logging.config.dictConfig
 except ImportError as importError:
     # from the file dictconfig.py
-    import dictconfig
+    from dictconfig import dictConfig 
+dictConfig(LOGSETTINGS)
 
 # from the file logsettings.py
 from logsettings import LOGSETTINGS
+
+if __name__ == '__main__':
+    logger = logging.getLogger(__name__)    
+    logger.debug('a debug message')
+
+
 ``` 
 
 Bare minimum logging
