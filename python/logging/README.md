@@ -14,15 +14,15 @@ If you are using python version 2.6, add the dictConfig.py otherwise use the
 builtin dictConfig
 
 ```
+# from the file logsettings.py
+from logsettings import LOGSETTINGS
+
 try:
     import logging.config.dictConfig
 except ImportError as importError:
     # from the file dictconfig.py
     from dictconfig import dictConfig 
 dictConfig(LOGSETTINGS)
-
-# from the file logsettings.py
-from logsettings import LOGSETTINGS
 
 if __name__ == '__main__':
     logger = logging.getLogger(__name__)    
