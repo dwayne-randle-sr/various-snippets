@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Dwayne Randle Sr. 
+#
+# Free's up the cache and buffers
+#
+# To accomplish this echo on of the following values into 
+# /proc/sys/vm/drop_caches on linux.
+#
+# 1 - To empty the pagecache 
+# 2 - To empty the free dentires and inodes 
+# 3 - To empty the pagecache, dentries and inodes
+# 
+# Be sure to sync the filesystem first.
+
+sync && echo 3 > /proc/sys/vm/drop_caches 
