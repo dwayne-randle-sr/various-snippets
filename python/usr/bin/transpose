@@ -1,0 +1,72 @@
+#!/usr/bin/python
+#
+# transpose - transposes a series of lines into columnar data.
+# 
+# Copyright 2015 (C) Dwayne Randle
+#
+# This program is free software: you can redistribute it and/or modify 
+# it under the terms of the GNU General Public License as published by 
+# the Free Software Foundation, either version 3 of the License, or 
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but 
+# WITHOUT ANY WARRANTY; without even the implied warranty of 
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License 
+# along with this program. If not, see http://www.gnu.org/licenses/
+#
+
+from argparse import ArgumentParser
+import sys
+
+def transpose(source=sys.stdin, output=sys.stdout, rowstocolumns=4, delimiter='|', rowdelimiter='\n'):
+    """ transpose source data to output. 
+
+    Will read rows and convert them to (rows_to_columns) outputing the columns 
+    using the specified delimiter.
+    """
+    
+    if source != sys.stdin:
+        try:
+            sourcefile = open(source, 'r')
+        except IOError as ioe:
+            logging.error("Error opening file %s " % ioe.strerror)
+            exit(1) 
+    else:
+        sourcefile = source
+
+    if output != sys.stdout:
+        try:
+            outputfile = open(output, 'w')
+        except IOError as ioe:
+            logging.error("Error opening file %s\n%s" % (output, ioe.strerror))
+            exit(1)
+
+    else:
+        outputfile = output
+
+
+    counter = 1
+    for line in sourcefile.read().splitlines():
+        outputfile.write("%s" % line)
+        counter += 1
+        if counter > rowstocolumns:
+            outputfile.write(rowdelimiter)
+            counter = 1 
+        else:
+            outputfile.write(delimiter)
+         
+def parse_args():
+    """ parse the arguments passed in to the program. """
+    
+    parser = ArgumentParser(description="Transpose multi-line input into multi-column output")
+    parser.add_argument('-f', '--filename')
+    return parser.parse_args()
+
+if __name__ == '__main__':
+   args = parse_args()
+   transpose()
+
+ 
