@@ -11,7 +11,7 @@ fi
 export PYTHONSTARTUP=~/various-snippets/python/startup/pythonstartup.py
 
 # OS Tools settings
-export GREP_OPTIONS='--color=always'
+export GREP_OPTIONS='--color=auto'
 
 # Bash Completion
 if [ -f /etc/bash_completion.d/django_bash_completion ] ; then
