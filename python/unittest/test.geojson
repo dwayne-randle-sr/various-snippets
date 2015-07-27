@@ -1,0 +1,13 @@
+{
+"type": "Feature",
+"properties": {
+    "name": "My house",
+    "amenity": "Bed",
+    "popupContent": "Imagine me saying 'deez nutz'"
+    },
+"geometry": {
+    "type": "Point",
+    "coordinates": [-90.1978, 38.6272],
+    }
+}
+
